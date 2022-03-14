@@ -1,6 +1,6 @@
 import React from 'react';
 
-function map_yamaguchi(){
+export default function MapYamaguchi(){
   return(
     <svg width="505.45999" height="340.57651" className='mw-100' viewBox="0 0 500 400">
     <defs id="defs32"/>
@@ -26,5 +26,3 @@ function map_yamaguchi(){
     </svg>
   )
 }
-
-export default map_yamaguchi
