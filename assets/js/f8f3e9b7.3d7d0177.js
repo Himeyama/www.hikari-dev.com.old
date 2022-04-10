@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[720],{6829:function(a){a.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/android","name":"Android","count":2,"permalink":"/tags/android"}')}}]);

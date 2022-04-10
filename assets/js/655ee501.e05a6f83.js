@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[214],{1363:function(a){a.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/blog","name":"Blog","count":1,"permalink":"/tags/blog"}')}}]);

@@ -4,9 +4,22 @@
         <title>ひかりぶ Blog</title>
         <link>https://www.hikari-dev.com/</link>
         <description>ひかりぶ Blog</description>
-        <lastBuildDate>Sun, 13 Mar 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 10 Apr 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[OpenLDAP の slappasswd で生成される SSHA とは]]></title>
+            <link>https://www.hikari-dev.com/2022/04/10/ssha-openldap</link>
+            <guid>/2022/04/10/ssha-openldap</guid>
+            <pubDate>Sun, 10 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[slappasswd コマンドとは]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_mojV" id="slappasswd-コマンドとは">slappasswd コマンドとは<a class="hash-link" href="#slappasswd-コマンドとは" title="見出しへの直接リンク">​</a></h2><p>slappasswd コマンドは OpenLDAP 用のパスワードを生成するコマンドで、
+デフォルトでは SSHA を用いて、パスワードをハッシュ化する。</p><div></div><h2 class="anchor anchorWithStickyNavbar_mojV" id="認証の仕組み">認証の仕組み<a class="hash-link" href="#認証の仕組み" title="見出しへの直接リンク">​</a></h2><p>SSHA では生成されたハッシュの末尾 4 バイトがソルトとなっており、
+入力されたパスワードと保存されているソルトからハッシュを生成し、
+保存されているハッシュと一致するかどうかで認証を行う。</p><div></div><p>以下のプログラムでは、
+適切なパスワード (例: admin) を与えると、元のハッシュと生成されたハッシュが一致する。</p><div class="codeBlockContainer_I0IT language-rb theme-code-block"><div class="codeBlockContent_wNvx rb"><pre tabindex="0" class="prism-code language-rb codeBlock_jd64 thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_mRuA"><span class="token-line" style="color:#393A34"><span class="token plain">require 'base64'</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">require 'digest'</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">pass = 'admin'</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ssha = '{SSHA}23AUBfRZytVFNpe7onuFhyCSJOHRzCWh'</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ssha =~ /{.+}(.+)/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">salt256s = Base64.decode64(Regexp.last_match(1)).unpack('C*')[-4..-1]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">salt = salt256s.pack('C*')</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">b_ssha = Digest::SHA1.digest(pass + salt)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Base64.strict_encode64(</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  (b_ssha.unpack('C*') + salt256s).pack('C*')</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">)</span><br></span></code></pre><button type="button" aria-label="クリップボードにコードをコピー" class="copyButton_wuS7 clean-btn">コピー</button></div></div>]]></content:encoded>
+            <category>OpenLDAP SHA</category>
+        </item>
         <item>
             <title><![CDATA[Poetry を用いた Python プロジェクトの作成]]></title>
             <link>https://www.hikari-dev.com/2022/03/13/poetry-python-project</link>
