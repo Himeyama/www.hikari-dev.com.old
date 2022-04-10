@@ -39,7 +39,7 @@ const config = {
         },
         docs: false,
         blog: {
-          remarkPlugins: [math],
+          remarkPlugins: [math, require('mdx-mermaid')],
           rehypePlugins: [katex],
           routeBasePath: '/',
           blogTitle: 'Hikalib',
