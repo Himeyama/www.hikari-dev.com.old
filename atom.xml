@@ -2,11 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.hikari-dev.com/</id>
     <title>ひかりぶ Blog</title>
-    <updated>2022-04-10T00:00:00.000Z</updated>
+    <updated>2022-04-15T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.hikari-dev.com/"/>
     <subtitle>ひかりぶ Blog</subtitle>
     <icon>https://www.hikari-dev.com/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[man ページの日本語設定]]></title>
+        <id>/2022/04/15/manja</id>
+        <link href="https://www.hikari-dev.com/2022/04/15/manja"/>
+        <updated>2022-04-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[インストール]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_mojV" id="インストール">インストール<a class="hash-link" href="#インストール" title="見出しへの直接リンク">​</a></h2><p>Ubuntu で man ページを日本語で表示するようにする。</p><div class="codeBlockContainer_I0IT language-sh theme-code-block"><div class="codeBlockContent_wNvx sh"><pre tabindex="0" class="prism-code language-sh codeBlock_jd64 thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_mRuA"><span class="token-line" style="color:#393A34"><span class="token plain">sudo apt update</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">sudo apt install language-pack-ja manpages-ja</span><br></span></code></pre><button type="button" aria-label="クリップボードにコードをコピー" class="copyButton_wuS7 clean-btn">コピー</button></div></div><h2 class="anchor anchorWithStickyNavbar_mojV" id="表示">表示<a class="hash-link" href="#表示" title="見出しへの直接リンク">​</a></h2><div class="codeBlockContainer_I0IT language-sh theme-code-block"><div class="codeBlockContent_wNvx sh"><pre tabindex="0" class="prism-code language-sh codeBlock_jd64 thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_mRuA"><span class="token-line" style="color:#393A34"><span class="token plain">LANG=ja_JP.UTF8 man ls</span><br></span></code></pre><button type="button" aria-label="クリップボードにコードをコピー" class="copyButton_wuS7 clean-btn">コピー</button></div></div><p><img loading="lazy" alt="man ls" src="/assets/images/man-ls-6b4cf5cbbcb2817749e1fcfd157944c3.png" width="2382" height="1316"></p>]]></content>
+        <category label="man" term="man"/>
+        <category label="Linux" term="Linux"/>
+        <category label="Ubuntu" term="Ubuntu"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[OpenLDAP の slappasswd で生成される SSHA とは]]></title>
         <id>/2022/04/10/ssha-openldap</id>
@@ -18,7 +29,8 @@
 入力されたパスワードと保存されているソルトからハッシュを生成し、
 保存されているハッシュと一致するかどうかで認証を行う。</p><div></div><p>以下のプログラムでは、
 適切なパスワード (例: admin) を与えると、元のハッシュと生成されたハッシュが一致する。</p><div class="codeBlockContainer_I0IT language-rb theme-code-block"><div class="codeBlockContent_wNvx rb"><pre tabindex="0" class="prism-code language-rb codeBlock_jd64 thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_mRuA"><span class="token-line" style="color:#393A34"><span class="token plain">require 'base64'</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">require 'digest'</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">pass = 'admin'</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ssha = '{SSHA}23AUBfRZytVFNpe7onuFhyCSJOHRzCWh'</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ssha =~ /{.+}(.+)/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">salt256s = Base64.decode64(Regexp.last_match(1)).unpack('C*')[-4..-1]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">salt = salt256s.pack('C*')</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">b_ssha = Digest::SHA1.digest(pass + salt)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Base64.strict_encode64(</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  (b_ssha.unpack('C*') + salt256s).pack('C*')</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">)</span><br></span></code></pre><button type="button" aria-label="クリップボードにコードをコピー" class="copyButton_wuS7 clean-btn">コピー</button></div></div>]]></content>
-        <category label="OpenLDAP SHA" term="OpenLDAP SHA"/>
+        <category label="OpenLDAP" term="OpenLDAP"/>
+        <category label="SHA" term="SHA"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Poetry を用いた Python プロジェクトの作成]]></title>

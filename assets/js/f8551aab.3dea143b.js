@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[1743],{77574:function(e,n,t){t.r(n),t.d(n,{default:function(){return u}});var a=t(67294),c=t(87014);function u(){return a.createElement(c.Z,null,a.createElement("h1",null,"My React page"),a.createElement("p",null,"This is a React page"))}}}]);

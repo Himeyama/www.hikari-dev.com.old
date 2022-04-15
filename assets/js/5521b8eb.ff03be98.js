@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[15],{78199:function(a){a.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/wsa","name":"WSA","count":1,"permalink":"/tags/wsa"}')}}]);

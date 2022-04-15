@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[4712],{20661:function(a){a.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/linux","name":"Linux","count":2,"permalink":"/tags/linux"}')}}]);
