@@ -15,18 +15,23 @@ ldapsearch -x -h localhost -b dc=example,dc=net
 
 今回は、nscd (+nslcd) を用い、sssd は**使用しません**。
 
-## libnss-ldapd のインストール
+設定は TUI によって操作するため、
+nano といったテキストエディターによって設定ファイルを編集する**必要はありません**。
+
+## libnss-ldapd、libpam-ldapd のインストール
 必要なパッケージをインストールします。
 
 ```sh
 sudo apt update
-sudo apt install libnss-ldapd
+sudo apt install libnss-ldapd libpam-ldapd
 
 # 必要であれば
 # sudo apt install ldap-auth-config
 ```
 
 `libnss-ldap` パッケージだと、ログインループバグが存在するので `libnss-ldapd` パッケージをインストールしてください。
+
+`libpam-ldapd` をインストールしないと**認証できない**ため注意してください。
 
 nslcd と libnss-ldapd の設定画面が出るので、適当に設定します。
 
@@ -35,6 +40,11 @@ nslcd と libnss-ldapd の設定画面が出るので、適当に設定します
 ![Configuring nslcd (1)](nslcd-1.png)
 
 ![Configuring nslcd (2)](nslcd-2.png)
+
+> 手動で行う場合 (**任意**)
+```sh
+sudo nano /etc/nslcd.conf
+```
 
 再設定を行いたい場合は以下のようにします。(**任意**)
 ```sh
@@ -45,12 +55,10 @@ sudo dpkg-reconfigure nslcd
 
 ![Configuring libnss-ldapd (2)](libnss-ldapd.png)
 
-再設定を行いたい場合は以下のようにします。(**任意**)
-
-> `sudo nano /etc/nsswhich.conf`
-```sh
-sudo dpkg-reconfigure libnss-ldapd
-```
+> 手動で行う場合 (**任意**)
+```bash
+sudo nano /etc/nsswhich.conf
+````
 
 ```diff
 - passwd:         files systemd
@@ -61,6 +69,11 @@ sudo dpkg-reconfigure libnss-ldapd
 + shadow:         files ldap
 - hosts:          files mdns4_minimal [NOTFOUND=return] dns
 + hosts:          files mdns4_minimal [NOTFOUND=return] dns ldap
+```
+
+再設定を行いたい場合は以下のようにします。(**任意**)
+```sh
+sudo dpkg-reconfigure libnss-ldapd
 ```
 
 ## ホームディレクトリの自動生成
