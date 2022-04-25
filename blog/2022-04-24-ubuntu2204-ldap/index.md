@@ -79,7 +79,15 @@ sudo dpkg-reconfigure libnss-ldapd
 ## ホームディレクトリの自動生成
 LDAP にログイン後、ホームディレクトリーを自動生成する場合は、以下のコマンドを実行し設定します。
 
-> TUI で追加
+> コマンドで追加
+```sh
+sudo pam-auth-update --enable mkhomedir
+
+# 無効化
+# sudo pam-auth-update --remove mkhomedir
+```
+
+> TUI で追加 (ホームディレクトリーのこと以外もい設定可能) **任意**
 ```sh
 sudo pam-auth-update
 ```
