@@ -9,6 +9,7 @@ tags: [Ubuntu, Ubuntu 22.04, LDAP, OpenLDAP]
 Ubuntu でログインできるような設定を説明します。
 
 > 例
+
 ```sh
 ldapsearch -x -h localhost -b dc=example,dc=net
 ```
@@ -42,6 +43,7 @@ nslcd と libnss-ldapd の設定画面が出るので、適当に設定します
 ![Configuring nslcd (2)](nslcd-2.png)
 
 > 手動で行う場合 (**任意**)
+
 ```sh
 sudo nano /etc/nslcd.conf
 ```
@@ -56,6 +58,7 @@ sudo dpkg-reconfigure nslcd
 ![Configuring libnss-ldapd (2)](libnss-ldapd.png)
 
 > 手動で行う場合 (**任意**)
+
 ```bash
 sudo nano /etc/nsswhich.conf
 ````
@@ -80,6 +83,7 @@ sudo dpkg-reconfigure libnss-ldapd
 LDAP にログイン後、ホームディレクトリーを自動生成する場合は、以下のコマンドを実行し設定します。
 
 > コマンドで追加
+
 ```sh
 sudo pam-auth-update --enable mkhomedir
 
@@ -88,6 +92,7 @@ sudo pam-auth-update --enable mkhomedir
 ```
 
 > TUI で追加 (ホームディレクトリーのこと以外もい設定可能) **任意**
+
 ```sh
 sudo pam-auth-update
 ```
@@ -95,6 +100,7 @@ sudo pam-auth-update
 ![PAM configuration](pam-conf.png)
 
 > 手動で追加する場合は (sudo nano /etc/pam.d/common-session) に以下を追加 (**任意**)
+
 ```
 session optional                        pam_mkhomedir.so
 ```
