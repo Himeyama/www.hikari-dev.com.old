@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[6447],{59804:function(u){u.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/ubuntu-22-04","name":"Ubuntu 22.04","count":3,"permalink":"/tags/ubuntu-22-04"}')}}]);

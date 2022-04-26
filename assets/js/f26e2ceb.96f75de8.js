@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[7959],{85868:function(u){u.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/ubuntu","name":"Ubuntu","count":3,"permalink":"/tags/ubuntu"}')}}]);
