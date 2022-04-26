@@ -10,7 +10,7 @@ Ubuntu でログインできるような設定を説明します。
 
 > 例
 
-```sh
+```bash
 ldapsearch -x -h localhost -b dc=example,dc=net
 ```
 
@@ -22,7 +22,7 @@ nano といったテキストエディターによって設定ファイルを編
 ## libnss-ldapd、libpam-ldapd のインストール
 必要なパッケージをインストールします。
 
-```sh
+```bash
 sudo apt update
 sudo apt install libnss-ldapd libpam-ldapd
 
@@ -44,12 +44,12 @@ nslcd と libnss-ldapd の設定画面が出るので、適当に設定します
 
 > 手動で行う場合 (**任意**)
 
-```sh
+```bash
 sudo nano /etc/nslcd.conf
 ```
 
 再設定を行いたい場合は以下のようにします。(**任意**)
-```sh
+```bash
 sudo dpkg-reconfigure nslcd
 ```
 
@@ -59,7 +59,7 @@ sudo dpkg-reconfigure nslcd
 
 > 手動で行う場合 (**任意**)
 
-```bash
+```babash
 sudo nano /etc/nsswhich.conf
 ````
 
@@ -68,14 +68,14 @@ sudo nano /etc/nsswhich.conf
 + passwd:         files systemd ldap
 - group:          files systemd
 + group:          files systemd ldap
-- shadow:         files
-+ shadow:         files ldap
+- bashadow:         files
++ bashadow:         files ldap
 - hosts:          files mdns4_minimal [NOTFOUND=return] dns
 + hosts:          files mdns4_minimal [NOTFOUND=return] dns ldap
 ```
 
 再設定を行いたい場合は以下のようにします。(**任意**)
-```sh
+```bash
 sudo dpkg-reconfigure libnss-ldapd
 ```
 
@@ -84,7 +84,7 @@ LDAP にログイン後、ホームディレクトリーを自動生成する場
 
 > コマンドで追加
 
-```sh
+```bash
 sudo pam-auth-update --enable mkhomedir
 
 # 無効化
@@ -93,7 +93,7 @@ sudo pam-auth-update --enable mkhomedir
 
 > TUI で追加 (ホームディレクトリーのこと以外もい設定可能) **任意**
 
-```sh
+```bash
 sudo pam-auth-update
 ```
 
@@ -108,14 +108,14 @@ session optional                        pam_mkhomedir.so
 ## nslcd (Name Service LDAP Connection Daemon) の再起動
 再起動すると、LDAP の情報を認識するようになる。
 
-```sh
+```bash
 sudo service nslcd restart
 ```
 
 ## 接続確認
-```sh
+```bash
 $ getent passwd
-root:x:0:0:root:/root:/bin/bash
+root:x:0:0:root:/root:/bin/babash
 ...
 ```
 
@@ -124,4 +124,4 @@ root:x:0:0:root:/root:/bin/bash
 bind DN が必要な場合は、`ldap-auth-config` を別途インストールして設定したほうがいいかも。
 - ログインループが起こる場合は再起動しましょう。
 - `getent passwd` で LDAP のユーザーに参照できず、`ldapsearch -x -h localhost -b dc=example,dc=net` コマンドで情報を参照できる場合は、LDAP のアクセス権限 (olcAccess) が原因であることを疑います。
-- スクショは SSH で Ubuntu に接続したものを Windows で撮っています。
+- スクショは Sbash で Ubuntu に接続したものを Windows で撮っています。

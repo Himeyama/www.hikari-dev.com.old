@@ -1,5 +1,5 @@
 ---
-title: 【Ubuntu】gsettings で Dock の設定を行う
+title: Ubuntu で gsettings を使用し Dock の設定を行う
 tags: [Ubuntu, Ubuntu 22.04, GNOME]
 ---
 
@@ -14,7 +14,7 @@ tags: [Ubuntu, Ubuntu 22.04, GNOME]
 
 > 例: Dock を自動的に隠す
 
-```sh
+```bash
 # 現在の設定
 $ gsettings get org.gnome.shell.extensions.dash-to-dock dock-fixed
 true
@@ -32,7 +32,7 @@ Dock を画面の端まで引き伸ばして表示。
 
 > 例: パネルを引き延ばさない
 
-```sh
+```bash
 # 現在の設定
 $ gsettings get org.gnome.shell.extensions.dash-to-dock extend-height
 true
@@ -48,13 +48,12 @@ $ gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
 
 > 例: アイコンサイズを 30 に変更
 
-```sh
+```bash
 # 現在の設定
 $ gsettings get org.gnome.shell.extensions.dash-to-dock dash-max-icon-size
 48
 
-$ gsettings set org.gnome.shell.e
-xtensions.dash-to-dock dash-max-icon-size 30
+$ gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 30
 ```
 
 
@@ -71,7 +70,7 @@ xtensions.dash-to-dock dash-max-icon-size 30
 
 > 例: Dock の表示位置を下に設定
 
-```sh
+```bash
 # 現在の設定
 $ gsettings get org.gnome.shell.extensions.dash-to-dock dock-position
 'LEFT'
@@ -88,10 +87,9 @@ $ gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'BOTTOM'
 
 > 例: ゴミ箱を非表示に設定
 
-```sh
+```bash
 # 現在の設定
-$ gsettings get org.gnome.shell.e
-xtensions.dash-to-dock show-trash
+$ gsettings get org.gnome.shell.extensions.dash-to-dock show-trash
 true
 
 $ gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
