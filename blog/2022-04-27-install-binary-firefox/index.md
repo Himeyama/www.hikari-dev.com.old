@@ -28,6 +28,6 @@ sudo cp -r firefox /usr/lib
 sudo ln -s /usr/lib/firefox/firefox /usr/bin/firefox
 
 # デスクトップファイルをダウンロードし配置
-sudo mkdir -p /usr/local/share/applications
-sudo wget https://bit.ly/3Mwigwx -O /usr/local/share/applications/firefox.desktop
+sudo mkdir -p /usr/share/applications
+sudo wget https://bit.ly/3Mwigwx -O /usr/share/applications/firefox.desktop
 ```
