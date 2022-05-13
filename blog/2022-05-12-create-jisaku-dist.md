@@ -3,8 +3,6 @@ title: Ubuntu 系の自作ディストリビューションの作り方
 tags: [Ubuntu, Linux]
 ---
 
-**この記事は書きかけです。**
-
 ## 概要
 1. iso ファイル (ディスクイメージ) を展開
 2. squashfs ファイル (`/` の中、ファイルシステムイメージ) を展開
@@ -20,7 +18,7 @@ tags: [Ubuntu, Linux]
 
 ## 必要なパッケージのインストール
 ```bash
-sudo apt install cd-boot-images-amd64
+sudo apt install cd-boot-images-amd64 xorriso
 ```
 
 パッケージがないとかでインストールができない場合は以下を実行し再度実行してください。
@@ -32,9 +30,11 @@ sudo apt update
 
 ## 展開とマウント
 ```bash
-# /mnt/d/ubuntu-22.04-desktop-amd64.iso はディスクイメージのパスです。
-# 状況に応じて変更してください。
-DISKIMAGE=/mnt/d/ubuntu-22.04-desktop-amd64.iso
+# DISK_IMAGE はディスクイメージのパスです。
+DISK_IMAGE=/mnt/d/ubuntu-22.04-desktop-amd64.iso
+
+# RELEASENOTE_URL はリリースノートの URL です。
+RELEASENOTE_URL="http://"
 
 # 作業ディレクトリーの作成
 mkdir ~/my-distribution
@@ -72,13 +72,12 @@ rm -r mntfs mnt
 rm image.iso
 
 # リリースノートの URL を設定します。
-echo "http://" | tee disk/.disk/release_notes_url
+echo $RELEASENOTE_URL | sudo tee disk/.disk/release_notes_url
 
 # ディスク情報を設定します。
 today=$(date +"%Y%m%d")
 echo -n "MyDistribution 22.04 LTS \"Jammy Jellyfish\" - Release amd64 ($today)" | tee 
-echo -n "MyDistribution 22.04 LTS \"Jammy Jellyfish\" - Release amd64 ($today)" | sudo tee di
-sk/.disk/info
+echo -n "MyDistribution 22.04 LTS \"Jammy Jellyfish\" - Release amd64 ($today)" | sudo tee disk/.disk/info
 
 # インストーラーの言語を日本語に設定します。
 cat | sudo tee -a disk/preseed/ubuntu.seed <<EOF
@@ -99,8 +98,72 @@ sudo sed -i "s#splash ---#$splash#" disk/boot/grub/grub.cfg
 ```
 
 ## カスタマイズするためのスクリプトの割り当て 
+```bash
+# MyDistribution.sh は Ubuntu をカスタマイズするスクリプトです。
+chroot squashfs /bin/bash MyDistribution.sh
+```
 
 ## ファイルシステムの作成
+```bash
+# パッケージ一覧を書き込み
+sudo chroot squashfs/ dpkg-query -W --showformat='${binary:Package}\t${Version}\n' |\
+tee disk/casper/filesystem.manifest
+
+# ファイルシステムのサイズを書き込み
+sudo du -B 1 -s squashfs/ | cut -f1 | sudo tee disk/casper/filesystem.size
+
+# ファイルシステムのイメージ化
+sudo mksquashfs squashfs/ disk/casper/filesystem.squashfs -xattrs -comp xz
+sudo rm disk/casper/filesystem.squashfs.gpg
+
+# md5sum.txt を出力
+cd disk
+find . -type f -not -name 'md5sum.txt' -not -path './boot/*' -not -path './EFI/*' -print0 | xargs -0 md5sum | sudo tee md5sum.txt
+md5sum ./boot/memtest86+.bin | sudo tee -a md5sum.txt
+md5sum ./boot/grub/*.cfg | sudo tee -a md5sum.txt
+cd ..
+```
 
 ## ディスクイメージの作成
+```bash
+VOLUME_ID="MyDistribution"
+OUTPUT_ISO="mydistribution-22.04-desktop-amd64.iso"
 
+xorriso \
+    -as mkisofs  \
+    -volid "$VOLUME_ID" \
+    -o "$OUTPUT_ISO" \
+    -J -joliet-long -l  \
+    -b boot/grub/i386-pc/eltorito.img  \
+    -no-emul-boot  \
+    -boot-load-size 4  \
+    -boot-info-table  \
+    --grub2-boot-info  \
+    --grub2-mbr /usr/share/cd-boot-images-amd64/images/boot/grub/i386-pc/boot_hybrid.img \
+    -append_partition 2 0xef /usr/share/cd-boot-images-amd64/images/boot/grub/efi.img  \
+    -appended_part_as_gpt  \
+    --mbr-force-bootable  \
+    -eltorito-alt-boot  \
+    -e --interval:appended_partition_2:all::  \
+    -no-emul-boot \
+    -partition_offset 16 \
+    -r \
+    disk/
+```
+
+## QEMU で起動してみる
+### QEMU をインストールしていない場合
+```bash
+sudo apt install -y qemu-system-x86
+```
+
+### LiveCD を起動する
+```bash
+sudo qemu-system-x86_64 -m 4G -cdrom mydistribution-22.04-desktop-amd64.iso -boot d --enable-kvm -usb -smp 6
+```
+
+### 仮想ディスクにインストールする場合
+```bash
+qemu-img create -f qcow2 disk.qcow2 32G
+sudo qemu-system-x86_64 -hda disk.qcow2 -m 4G -cdrom mydistribution-22.04-desktop-amd64.iso -boot d --enable-kvm -usb -smp 6
+```
