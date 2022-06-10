@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[4957],{211:function(e){e.exports=JSON.parse('{"permalink":"/tags/matplotlib-set-xticks-set-xticklabelss","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"previousPage":null,"nextPage":null,"blogDescription":"Hikari\'s blog.","blogTitle":"Hikalib"}')}}]);

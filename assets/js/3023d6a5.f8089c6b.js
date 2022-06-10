@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[896],{93041:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/set-xticks","name":"set_xticks","count":1,"permalink":"/tags/set-xticks"}')}}]);
