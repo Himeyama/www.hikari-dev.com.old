@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[9222],{97441:function(a){a.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/gpu","name":"GPU","count":1,"permalink":"/tags/gpu"}')}}]);

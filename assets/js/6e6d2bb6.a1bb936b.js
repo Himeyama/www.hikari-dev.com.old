@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[7869],{1321:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/matplotlib-set-xticks-set-xticklabelss","name":"Matplotlib set_xticks set_xticklabelss","count":1,"permalink":"/tags/matplotlib-set-xticks-set-xticklabelss"}')}}]);

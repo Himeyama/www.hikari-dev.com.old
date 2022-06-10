@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[8986],{67468:function(a){a.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/cublas","name":"cublas","count":1,"permalink":"/tags/cublas"}')}}]);
