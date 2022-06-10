@@ -1,6 +1,6 @@
 ---
 title: Matplotlib の set_xticks の使いどころ (自己相関の例)
-tags: [Matplotlib set_xticks set_xticklabelss]
+tags: [Python, acorr, xcorr, Matplotlib, set_xticks, set_xticklabelss]
 ---
 
 ## 信号の生成と自己相関の例
