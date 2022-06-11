@@ -1,6 +1,6 @@
 ---
 title: Python でリストに対して * を使用する際の注意事項
-tags: Python, 破壊的メソッド, inplace
+tags: [Python, 破壊的メソッド, inplace]
 ---
 
 ## リストの中に同じリストを複数並べる例
