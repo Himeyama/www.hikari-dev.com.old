@@ -73,7 +73,7 @@ const config = {
       metadata: [
         {
           name: 'ひかりぶ',
-          content: 'blog, technology'
+          content: 'blog, technology, python, ruby, linux, student'
         }
       ],
       navbar: {
