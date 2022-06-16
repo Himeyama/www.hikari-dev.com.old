@@ -18,6 +18,7 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'himeyama', // Usually your GitHub org/user name.
   projectName: 'www.hikari-dev.com', // Usually your repo name.
+  noIndex: false,
   i18n: {
     defaultLocale: 'ja',
     locales: ['ja'],
