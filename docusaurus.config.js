@@ -3,8 +3,8 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const math = require('remark-math');
-const katex = require('rehype-katex');
+// const math = require('remark-math');
+// const katex = require('rehype-katex');
 
 
 /** @type {import('@docusaurus/types').Config} */
@@ -16,6 +16,7 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
+  trailingSlash: true,
   organizationName: 'himeyama', // Usually your GitHub org/user name.
   projectName: 'www.hikari-dev.com', // Usually your repo name.
   noIndex: false,
@@ -31,17 +32,20 @@ const config = {
   },
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      '@docusaurus/preset-classic',
+      {
+        sitemap: {
+          changefreq: 'weekly',
+          ignorePatterns: ['/tags/**', '/page/2'],
+        },
         googleAnalytics: {
           trackingID: 'UA-222708329-1',
           anonymizeIP: true
         },
         docs: false,
         blog: {
-          remarkPlugins: [math, require('mdx-mermaid')],
-          rehypePlugins: [katex],
+          // remarkPlugins: [math, require('mdx-mermaid')],
+          // rehypePlugins: [katex],
           routeBasePath: '/',
           blogTitle: 'Hikalib',
           blogDescription: 'Hikari\'s blog.',
@@ -55,7 +59,7 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      }),
+      },
     ],
   ],
   stylesheets: [
