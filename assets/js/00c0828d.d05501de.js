@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[6298],{46869:function(a){a.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/acorr","name":"acorr","count":1,"permalink":"/tags/acorr"}')}}]);

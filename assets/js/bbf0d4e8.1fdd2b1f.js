@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[7120],{8844:function(e){e.exports=JSON.parse('{"label":"Firefox","permalink":"/tags/firefox","allTagsPath":"/tags","count":1}')}}]);

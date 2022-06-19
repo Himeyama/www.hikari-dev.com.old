@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[8427],{22003:function(a){a.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/\u7834\u58ca\u7684\u30e1\u30bd\u30c3\u30c9","name":"\u7834\u58ca\u7684\u30e1\u30bd\u30c3\u30c9","count":1,"permalink":"/tags/\u7834\u58ca\u7684\u30e1\u30bd\u30c3\u30c9"}')}}]);

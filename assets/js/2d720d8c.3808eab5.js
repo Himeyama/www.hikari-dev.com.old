@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[8577],{20358:function(e){e.exports=JSON.parse('{"permalink":"/tags/android","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"previousPage":null,"nextPage":null,"blogDescription":"Hikari\'s blog.","blogTitle":"Hikalib"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[8442],{29332:function(e){e.exports=JSON.parse('{"permalink":"/tags/linux","page":1,"postsPerPage":10,"totalPages":1,"totalCount":3,"previousPage":null,"nextPage":null,"blogDescription":"Hikari\'s blog.","blogTitle":"Hikalib"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[6723],{48230:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/windows","name":"Windows","count":1,"permalink":"/tags/windows"}')}}]);

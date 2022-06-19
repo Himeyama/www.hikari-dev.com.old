@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[7120],{48844:function(e){e.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/firefox","name":"Firefox","count":1,"permalink":"/tags/firefox"}')}}]);

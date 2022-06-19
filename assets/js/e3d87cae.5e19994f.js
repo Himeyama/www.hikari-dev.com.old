@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwww_hikari_dev_com=self.webpackChunkwww_hikari_dev_com||[]).push([[6002],{7495:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/set-xticklabelss","name":"set_xticklabelss","count":1,"permalink":"/tags/set-xticklabelss"}')}}]);
