@@ -4,10 +4,22 @@
         <title>ひかりぶ Blog</title>
         <link>https://www.hikari-dev.com/</link>
         <description>ひかりぶ Blog</description>
-        <lastBuildDate>Sat, 11 Jun 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 22 Jun 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>ja</language>
+        <item>
+            <title><![CDATA[WSL Distro Manager を試す]]></title>
+            <link>https://www.hikari-dev.com/2022/06/22/wsl2-distro-manager</link>
+            <guid>/2022/06/22/wsl2-distro-manager</guid>
+            <pubDate>Wed, 22 Jun 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[WSL2 を管理する GUI ツールである WSL Distro Manager (wsl2-distro-manager) を試す。]]></description>
+            <content:encoded><![CDATA[<p>WSL2 を管理する GUI ツールである WSL Distro Manager (<a href="https://github.com/bostrot/wsl2-distro-manager" target="_blank" rel="noopener noreferrer">wsl2-distro-manager</a>) を試す。</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="実行方法">実行方法<a class="hash-link" href="#実行方法" title="見出しへの直接リンク">​</a></h2><p><a href="https://github.com/bostrot/wsl2-distro-manager/releases/" target="_blank" rel="noopener noreferrer">https://github.com/bostrot/wsl2-distro-manager/releases/</a> から
+wsl2-distro-manager-vx.x.x.zip をダウンロード。</p><p>展開し、<code>%USERPROFILE%</code> にでもコピーしておく。</p><p>wsl2distromanager.exe をクリックし、警告が出るが、たぶん問題ないので「詳細情報」をクリックし「実行」する。</p><img loading="lazy" src="sc01.png" alt="wsl2distromanager" height="360" class="img_ev3q"><p>以下のウィンドウが出て、ツールが起動する。</p><img loading="lazy" src="sc02.png" alt="wsl2distromanager.exe" height="360" class="img_ev3q"><p>折り畳みを開くと、アイコンが出てくる。</p><img loading="lazy" src="sc03.png" alt="wsl2distromanager.exe" height="80" class="img_ev3q"><p>これらのアイコンで、</p><ul><li>WSL のディレクトリを開く</li><li>WSL を VSCode で開く</li><li>WSL のインスタンスを複製</li><li>インスタンス名の変更</li><li>インスタンスを消去</li><li>設定</li></ul><p>が可能。</p><p>インスタンスの追加は、左アイコンメニューの「＋」から可能。</p><img loading="lazy" src="sc04.png" alt="wsl2distromanager.exe" height="360" class="img_ev3q"><p>WSL の設定ファイルである <code>.wslconfig</code> に書くような設定は左アイコンメニューの上の歯車「⚙」から可能。</p><img loading="lazy" src="sc04.png" alt="wsl2distromanager.exe" height="360" class="img_ev3q">]]></content:encoded>
+            <category>Windows</category>
+            <category>WSL</category>
+            <category>デスクトップアプリ</category>
+        </item>
         <item>
             <title><![CDATA[Python でリストに対して * を使用する際の注意事項]]></title>
             <link>https://www.hikari-dev.com/2022/06/11/pyinplace</link>
