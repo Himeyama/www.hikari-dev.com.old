@@ -13,15 +13,15 @@ wsl2-distro-manager-vx.x.x.zip をダウンロード。
 
 wsl2distromanager.exe をクリックし、警告が出るが、たぶん問題ないので「詳細情報」をクリックし「実行」する。
 
-<img src='sc01.png' alt='wsl2distromanager' height="360" />
+![wsl2distromanager](sc01.png)
 
 以下のウィンドウが出て、ツールが起動する。
 
-<img src='sc02.png' alt='wsl2distromanager.exe' height="360" />
+![wsl2distromanager](sc02.png)
 
 折り畳みを開くと、アイコンが出てくる。
 
-<img src='sc03.png' alt='wsl2distromanager.exe' height="80" />
+![wsl2distromanager](sc03.png)
 
 これらのアイコンで、
 
@@ -36,8 +36,8 @@ wsl2distromanager.exe をクリックし、警告が出るが、たぶん問題�
 
 インスタンスの追加は、左アイコンメニューの「＋」から可能。
 
-<img src='sc04.png' alt='wsl2distromanager.exe' height="360" />
+![wsl2distromanager](sc04.png)
 
 WSL の設定ファイルである `.wslconfig` に書くような設定は左アイコンメニューの上の歯車「⚙」から可能。
 
-<img src='sc04.png' alt='wsl2distromanager.exe' height="360" />
+![wsl2distromanager](sc05.png)
