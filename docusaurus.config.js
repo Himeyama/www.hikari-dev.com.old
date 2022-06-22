@@ -43,7 +43,7 @@ const config = {
           trackingID: 'UA-222708329-1',
           anonymizeIP: true
         },
-        docs: false,
+        docs: {},
         blog: {
           // remarkPlugins: [math, require('mdx-mermaid')],
           // rehypePlugins: [katex],
@@ -97,6 +97,11 @@ const config = {
           {
             to: 'archive',
             label: 'アーカイブ',
+            position: 'right'
+          },
+          {
+            to: 'docs',
+            label: 'ドキュメント',
             position: 'right'
           },
           {
