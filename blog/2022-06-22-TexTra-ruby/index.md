@@ -1,9 +1,9 @@
 ---
-title: 簡易に TexTra で Web API を試す
-tags: [Ruby, TexTra, WebAPI]
+title: みんなの自動翻訳＠TexTra の Web API を叩いて翻訳する簡単なスクリプトを作成してみた
+tags: [Ruby, TexTra, WebAPI, みんなの自動翻訳]
 ---
 
-Ruby で TexTra の Web API を叩き翻訳する 2、30 行の簡単なスクリプトを作成した。
+Ruby で みんなの自動翻訳＠TexTra の Web API を叩き翻訳する 2、30 行の簡単なスクリプトを作成した。
 
 
 
