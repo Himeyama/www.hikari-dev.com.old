@@ -36,7 +36,7 @@ const config = {
       {
         sitemap: {
           changefreq: 'weekly',
-          ignorePatterns: ['/tags/**', '/page/2'],
+          ignorePatterns: ['/tags/**', '/page/*', '/my-react-page/', '/markdown-page/'],
         },
         googleAnalytics: {
           trackingID: 'UA-222708329-1',
@@ -91,6 +91,11 @@ const config = {
           {
             to: 'tags',
             label: 'タグ別',
+            position: 'right'
+          },
+          {
+            to: 'archive',
+            label: 'アーカイブ',
             position: 'right'
           },
           {
