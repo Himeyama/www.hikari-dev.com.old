@@ -9,6 +9,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+  themes: ['@docusaurus/theme-live-codeblock'],
   title: 'ひかりぶ',
   tagline: 'Hikalib',
   url: 'https://www.hikari-dev.com',
