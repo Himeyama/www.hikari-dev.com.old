@@ -52,6 +52,7 @@ const config = {
           blogSidebarTitle: '最近の投稿',
           blogSidebarCount: 'ALL',
           showReadingTime: true,
+          postsPerPage: 1,
           // Please change this to your repo.
           editUrl:
             'https://github.com/himeyama/www.hikari-dev.com',
