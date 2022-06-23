@@ -43,7 +43,8 @@ const config = {
           trackingID: 'UA-222708329-1',
           anonymizeIP: true
         },
-        docs: {},
+        docs: {
+        },
         blog: {
           // remarkPlugins: [math, require('mdx-mermaid')],
           // rehypePlugins: [katex],
@@ -76,6 +77,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'dark',
+      },
       metadata: [
         {
           name: 'ひかりぶ',
