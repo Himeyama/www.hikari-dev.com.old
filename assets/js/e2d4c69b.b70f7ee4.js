@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9065],{989:function(e){e.exports=JSON.parse('{"permalink":"/tags/tex-tra","page":1,"postsPerPage":1,"totalPages":1,"totalCount":1,"blogDescription":"Hikari\'s blog.","blogTitle":"Hikalib"}')}}]);

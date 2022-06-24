@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9945],{8396:function(e){e.exports=JSON.parse('{"label":"Ubuntu 22.04","permalink":"/blog/tags/ubuntu-22-04","allTagsPath":"/blog/tags","count":3}')}}]);

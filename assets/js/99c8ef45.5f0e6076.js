@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[5403],{4835:function(e){e.exports=JSON.parse('{"label":"GNOME","permalink":"/tags/gnome","allTagsPath":"/tags","count":1}')}}]);

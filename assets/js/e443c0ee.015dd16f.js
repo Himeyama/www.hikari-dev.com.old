@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9876],{2220:function(e){e.exports=JSON.parse('{"permalink":"/blog/tags/gnome","page":1,"postsPerPage":1,"totalPages":1,"totalCount":1,"blogDescription":"Hikari\'s blog.","blogTitle":"Hikalib"}')}}]);
