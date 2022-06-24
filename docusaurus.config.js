@@ -6,6 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 // const math = require('remark-math');
 // const katex = require('rehype-katex');
 
+const redirects = require('./redirect.config.js');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -31,13 +32,21 @@ const config = {
       },
     },
   },
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: redirects()
+      },
+    ],
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',
       {
         sitemap: {
           changefreq: 'weekly',
-          ignorePatterns: ['/tags/**', '/page/*', '/my-react-page/', '/markdown-page/'],
+          ignorePatterns: ['/blog/tags/**', '/docs/tags/**', '/blog/page/*', '/my-react-page/', '/markdown-page/'],
         },
         googleAnalytics: {
           trackingID: 'UA-222708329-1',
@@ -48,7 +57,7 @@ const config = {
         blog: {
           // remarkPlugins: [math, require('mdx-mermaid')],
           // rehypePlugins: [katex],
-          routeBasePath: '/',
+          // routeBasePath: '/',
           blogTitle: 'Hikalib',
           blogDescription: 'Hikari\'s blog.',
           blogSidebarTitle: '最近の投稿',
@@ -78,7 +87,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       colorMode: {
-        defaultMode: 'dark',
+        defaultMode: 'light',
       },
       metadata: [
         {
@@ -94,12 +103,12 @@ const config = {
         },
         items: [
           {
-            to: 'tags',
+            to: 'blog/tags',
             label: 'タグ別',
             position: 'right'
           },
           {
-            to: 'archive',
+            to: 'blog/archive',
             label: 'アーカイブ',
             position: 'right'
           },
@@ -127,7 +136,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                to: '/',
+                to: 'blog',
               },
               {
                 label: 'GitHub',
