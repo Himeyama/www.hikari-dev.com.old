@@ -3,8 +3,8 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-// const math = require('remark-math');
-// const katex = require('rehype-katex');
+const math = require('remark-math');
+const katex = require('rehype-katex');
 
 const redirects = require('./redirect.config.js');
 
@@ -55,8 +55,8 @@ const config = {
         docs: {
         },
         blog: {
-          // remarkPlugins: [math, require('mdx-mermaid')],
-          // rehypePlugins: [katex],
+          remarkPlugins: [math, require('mdx-mermaid')],
+          rehypePlugins: [katex],
           // routeBasePath: '/',
           blogTitle: 'Hikalib',
           blogDescription: 'Hikari\'s blog.',
@@ -108,6 +108,11 @@ const config = {
             position: 'right'
           },
           {
+            to: 'blog',
+            label: 'ブログ',
+            position: 'right'
+          },
+          {
             to: 'blog/archive',
             label: 'アーカイブ',
             position: 'right'
@@ -118,7 +123,7 @@ const config = {
             position: 'right'
           },
           {
-            to: 'https://covid19.hikari-dev.com/',
+            to: 'docs/sars2-yamaguchi/',
             label: '山口県の新型コロナ情報',
             position: 'right'
           },
