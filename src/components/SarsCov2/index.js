@@ -33,7 +33,7 @@ function n_positives_area(
     let area_data = {}
     for(let entry of data_list){
         if(entry['居住地'] == area){
-            date_str = (new Date(Date.parse(entry['公表日']))).toISOString()
+            let date_str = (new Date(Date.parse(entry['公表日']))).toISOString()
             if(typeof(area_data[date_str]) === 'undefined'){
                 area_data[date_str] = 1
             }else{
@@ -41,11 +41,11 @@ function n_positives_area(
             }
         }
     }
-    area_data_ary = index_date.slice()
+    let area_data_ary = index_date.slice()
     let i = 0
     for(let date of index_date){
-        date_str = (new Date(Date.parse(date))).toISOString()
-        n_positive = area_data[date_str]
+        let date_str = (new Date(Date.parse(date))).toISOString()
+        let n_positive = area_data[date_str]
         if(typeof(n_positive) === 'undefined'){
             area_data_ary[i] = 0
         }else{
@@ -65,7 +65,7 @@ function n_positives_areas(data_list){
     let colors = ["#F44336", "#E91E63", "#9C27B0", "#673Ab7", "#3F51B5", "#2196F3", "#03A9F4", "#00BCD4", "#009688", "#4CAF50", "#8BC34A", "#CDDC39", "#FFEB3B", "#FFC107", "#FF9800", "#FF5722", "#795548", "#9E9E9E", "#607D8B"]
     let i = 0
     for(let area of areas){
-        entry = {
+        let entry = {
             "label": area, 
             "data": [...n_positives_area(data_list, area, idx_date)],
             "borderColor": colors[i],
@@ -77,7 +77,7 @@ function n_positives_areas(data_list){
     return datasets
 }
 
-exports.to_chartjs_obj = function (data_list, period){
+export default function to_chartjs_obj(data_list, period){
     let idx_date = index_date(data_list).map(e => {
         return `${e.getYear() + 1900}-${e.getMonth() + 1}-${e.getDate()}`
     })

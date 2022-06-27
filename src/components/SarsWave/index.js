@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import sarscov2 from '@site/src/components/SarsCov2'
+import to_chartjs_obj from '@site/src/components/SarsCov2'
 import { Line } from 'react-chartjs-2';
 import { Chart, registerables } from "chart.js"
 import Tabs from '@theme/Tabs';
@@ -14,31 +14,34 @@ function TabCov2City({sumCities, sumCities7}){
     let townNames = ["周防大島町", "和木町", "上関町", "田布施町", "平生町", "阿武町"]
 
     let render = []
+    let key = 1
     for(let cityName of cityNames){
         if(cityName != "..."){
             render.push(
-                <TabItem value={cityName} label={cityName.slice(0, -1)}>
+                <TabItem key={key} value={cityName} label={cityName.slice(0, -1)}>
                     <p>陽性者合計: {sumCities[cityName]} 人</p>
                     <p>陽性者 1 日平均 (過去 1 週間): {(sumCities7[cityName] / 7).toFixed(2)} 人</p>
                 </TabItem>
             )
+            key += 1
         }else{
             let child_render = []
             for(let townName of townNames){
                 child_render.push(
-                    <TabItem value={townName} label={townName.slice(0, -1)}>
+                    <TabItem key={key} value={townName} label={townName.slice(0, -1)}>
                         <p>陽性者合計: {sumCities[townName]} 人</p>
                         <p>陽性者 1 日平均 (過去 1 週間): {(sumCities7[townName] / 7).toFixed(2)} 人</p>
                     </TabItem>
                 )
+                key += 1
             }
             render.push(
-                <TabItem value="etc" label="その他">
+                <TabItem key={key} value="etc" label="その他">
                     <Tabs>{child_render}</Tabs>
                 </TabItem>
             )
+            key += 1
         }
-        
     }
 
     return(
@@ -65,13 +68,13 @@ export default function Cov2Wave() {
             .then(
                 (result) => {
                     let data_list = result['data']
-                    let chartjs_data = sarscov2.to_chartjs_obj(data_list, -1)
+                    let chartjs_data = to_chartjs_obj(data_list, -1)
                     setCov2DataAll(chartjs_data)
-                    setCov2DataAYear(sarscov2.to_chartjs_obj(data_list, 365))
-                    setCov2DataHalfYear(sarscov2.to_chartjs_obj(data_list, 183))
-                    setCov2Data30Days(sarscov2.to_chartjs_obj(data_list, 30))
-                    setCov2Data14Days(sarscov2.to_chartjs_obj(data_list, 14))
-                    setCov2Data7Days(sarscov2.to_chartjs_obj(data_list, 7))
+                    setCov2DataAYear(to_chartjs_obj(data_list, 365))
+                    setCov2DataHalfYear(to_chartjs_obj(data_list, 183))
+                    setCov2Data30Days(to_chartjs_obj(data_list, 30))
+                    setCov2Data14Days(to_chartjs_obj(data_list, 14))
+                    setCov2Data7Days(to_chartjs_obj(data_list, 7))
 
                     // 全期間の合計
                     let sumCities = {}
