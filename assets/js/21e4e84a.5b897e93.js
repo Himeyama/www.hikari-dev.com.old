@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[5458],{27630:function(e){e.exports=JSON.parse('{"permalink":"/blog/tags/matplotlib","page":1,"postsPerPage":1,"totalPages":2,"totalCount":2,"nextPage":"/blog/tags/matplotlib/page/2","blogDescription":"Hikari\'s blog.","blogTitle":"Hikalib"}')}}]);

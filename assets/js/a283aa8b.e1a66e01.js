@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9319],{32472:function(e){e.exports=JSON.parse('{"label":"k\u6700\u8fd1\u508d\u6cd5","permalink":"/blog/tags/k\u6700\u8fd1\u508d\u6cd5","allTagsPath":"/blog/tags","count":1}')}}]);
