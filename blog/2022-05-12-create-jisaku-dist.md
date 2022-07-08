@@ -1,5 +1,5 @@
 ---
-title: Ubuntu 系の自作ディストリビューションの作り方
+title: Ubuntu 系の Linux ディストリビューションの自作方法
 tags: [Ubuntu, Linux]
 ---
 
