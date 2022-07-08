@@ -1,0 +1,111 @@
+---
+title: C 言語で行列 (その 1)
+tags: [C言語, 行列]
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## 行列用の配列を確保して開放するだけのプログラム例
+
+
+
+```mdx-code-block
+<Tabs>
+<TabItem value="コード">
+```
+
+```c title="main.c"
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char* argv[]){
+    int i, j;
+    int n_rows, n_cols;
+
+    if(argc != 3){
+        fprintf(stderr, "エラー: 引数が正しく入力されていません。\n");
+        return EXIT_FAILURE;
+    }
+    n_rows = (int)strtol(argv[1], NULL, 10);
+    n_cols = (int)strtol(argv[2], NULL, 10);
+
+    int **matrix = (int**)malloc(sizeof(int*) * n_rows);
+
+    if(matrix == NULL){
+        fprintf(stderr, "エラー: メモリが確保出来ません。\n");
+        return EXIT_FAILURE;
+    }
+
+    for(i = 0; i < n_rows; i++){
+        matrix[i] = (int*)malloc(sizeof(int) * n_cols);
+        if(matrix[i] == NULL){
+            fprintf(stderr, "エラー: メモリが確保出来ません。\n");
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    /* 行列に値を入れていく */
+    for(i = 0; i < n_rows; i++)
+        for(j = 0; j < n_cols; j++)
+            matrix[i][j] = i * n_cols + j + 1;
+
+    /* 行列の中を表示 */
+    for(i = 0; i < n_rows; i++){
+        for(j = 0; j < n_cols; j++)
+            printf("%4d  ", matrix[i][j]);
+        putchar('\n');
+    }
+
+    for(i = 0; i < n_rows; i++){
+        free(matrix[i]);
+    }
+    free(matrix);
+
+    return 0;
+}
+```
+
+[![クリエイティブ・コモンズ・ライセンス](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)  
+この 作品 は [クリエイティブ・コモンズ 表示 4.0 国際 ライセンス](http://creativecommons.org/licenses/by/4.0/)の下に提供されています。
+
+```mdx-code-block
+</TabItem>
+<TabItem value="コンパイル">
+```
+
+```bash
+gcc main.c -o main -ansi -Wall
+```
+
+
+```mdx-code-block
+</TabItem>
+<TabItem value="実行例 1">
+```
+
+```bash
+$ ./main 5 10
+   1     2     3     4     5     6     7     8     9    10  
+  11    12    13    14    15    16    17    18    19    20  
+  21    22    23    24    25    26    27    28    29    30  
+  31    32    33    34    35    36    37    38    39    40  
+  41    42    43    44    45    46    47    48    49    50
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="実行例 2">
+```
+
+```bash
+$ ./main
+エラー: 引数が正しく入力されていません。
+```
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
+
+**※この書き方が良いかどうかは知りません。**
