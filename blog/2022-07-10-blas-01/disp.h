@@ -1,0 +1,1 @@
+void disp_svec(float *X, int n);
