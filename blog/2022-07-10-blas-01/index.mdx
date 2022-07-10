@@ -7,9 +7,9 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## BLAS について
-BLAS は線形代数の演算を行うライブラリ。
+BLAS は線形代数の演算を行うライブラリです。
 
-BLAS は 3 つのレベルに分類される
+BLAS は 3 つのレベルに分類されます。
 
 |レベル |概要                |
 |:-----:|:------------------:|
@@ -17,7 +17,7 @@ BLAS は 3 つのレベルに分類される
 |Level 2|ベクトルと行列の計算|
 |Level 3|行列と行列の計算    |
 
-関数の先頭は接頭辞から始まり、以下のような意味がある。
+関数の先頭は接頭辞から始まり、以下のような意味があります。
 
 |接頭辞|意味|型  |
 |:----:|:--:|:--:|
@@ -28,7 +28,7 @@ BLAS は 3 つのレベルに分類される
 
 :::note
 
-以降の例で使用するため単精度浮動小数点数のベクトルを表示する関数として `disp_svec` を作っておきました。
+以降の例で使用するため単精度浮動小数点数のベクトルまたは行列を表示する関数として `disp_svec`、`disp_smat` を作っておきました。
 
 ```mdx-code-block
 <Tabs>
@@ -52,6 +52,21 @@ void disp_svec(float *X, int n){
     }
     puts(str);
 }
+
+void disp_smat(float *X, int M, int N){
+    char str[MAX_STR] = {};
+    char tmp[LEN_NUM] = {};
+    int i, j;
+
+    for(i = 0; i < M; i++){
+        for(j = 0; j < N; j++){
+            sprintf(tmp, "%8.2f ", X[i * N + j]);
+            strcat(str, tmp);
+        }
+        strcat(str, "\n");
+    }
+    printf("%s", str);
+}
 ```
 
 ```mdx-code-block
@@ -61,6 +76,7 @@ void disp_svec(float *X, int n){
 
 ```c title="disp.h"
 void disp_svec(float *X, int n);
+void disp_smat(float *X, int M, int N);
 ```
 
 ```mdx-code-block
@@ -732,8 +748,124 @@ $ ./ex09
 </Tabs>
 ```
 
-
-とりあえずここまで。
-
 ## Level 3
+### 行列の積 (cblas_*gemm)
 
+
+$$\begin{align}
+C &\leftarrow \alpha A B + \beta C
+\end{align}$$
+
+### 定義
+
+```c
+void cblas_sgemm(CBLAS_LAYOUT layout, CBLAS_TRANSPOSE TransA,
+                 CBLAS_TRANSPOSE TransB, const int M, const int N,
+                 const int K, const float alpha, const float *A,
+                 const int lda, const float *B, const int ldb,
+                 const float beta, float *C, const int ldc);
+void cblas_dgemm(CBLAS_LAYOUT layout, CBLAS_TRANSPOSE TransA,
+                 CBLAS_TRANSPOSE TransB, const int M, const int N,
+                 const int K, const double alpha, const double *A,
+                 const int lda, const double *B, const int ldb,
+                 const double beta, double *C, const int ldc);
+void cblas_cgemm(CBLAS_LAYOUT layout, CBLAS_TRANSPOSE TransA,
+                 CBLAS_TRANSPOSE TransB, const int M, const int N,
+                 const int K, const void *alpha, const void *A,
+                 const int lda, const void *B, const int ldb,
+                 const void *beta, void *C, const int ldc);
+void cblas_zgemm(CBLAS_LAYOUT layout, CBLAS_TRANSPOSE TransA,
+                 CBLAS_TRANSPOSE TransB, const int M, const int N,
+                 const int K, const void *alpha, const void *A,
+                 const int lda, const void *B, const int ldb,
+                 const void *beta, void *C, const int ldc);
+```
+
+|仮引数|意味|
+|:----:|:--:|
+|layout|レイアウト (`CblasRowMajor`, `CblasColMajor`)|
+|TransA|$A$ を転置するかどうか (`CblasNoTrans`, `CblasTrans`, `CblasConjTrans`)|
+|TransB|$B$ を転置するかどうか (`CblasNoTrans`, `CblasTrans`, `CblasConjTrans`)|
+|M|$C$ の行数|
+|N|$C$ の列数|
+|K|$A$ の列数 ($B$ の行数)|
+|alpha|定数 $\alpha$|
+|A|行列 $A$|
+|lda|$A$ の列数 (行数)|
+|B|行列 $B$|
+|ldb|$B$ の列数 (行数)|
+|C|行列 $C$|
+|ldc|$C$ の列数 (行数)|
+
+
+
+
+
+
+
+
+
+```mdx-code-block
+<Tabs>
+<TabItem value="コード">
+```
+
+```c title="ex10.c"
+#include <cblas.h>
+#include <stdio.h>
+#include "disp.h"
+
+
+int main(void){
+    float A[] = {
+        3, 2,
+        1, 2,
+        -1, 1
+    };
+
+    float B[] = {
+        1, 2, -1,
+        4, 1, 3
+    };
+
+    float C[9] = {};
+
+    cblas_sgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, 3, 3, 2, 1, A, 2, B, 3, 1, C, 3);
+
+    disp_smat(C, 3, 3);
+    
+    return 0;
+}
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="Makefile">
+```
+
+```Makefile title="Makefile"
+CC  = gcc
+LIBS = -lblas
+OPT = -ansi -Wall
+OBJS = disp.c
+
+ex10: ex10.c
+	$(CC) $< $(OBJS) $(LIBS) $(OPT) -o $@ 
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="実行例">
+```
+
+```bash
+$ ./ex10
+   11.00     8.00     3.00 
+    9.00     4.00     5.00 
+    3.00    -1.00     4.00
+```
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```

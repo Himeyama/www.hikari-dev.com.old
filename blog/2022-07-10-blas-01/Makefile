@@ -29,3 +29,6 @@ ex08: ex08.c
 
 ex09: ex09.c
 	$(CC) $< $(OBJS) $(LIBS) $(OPT) -o $@ 
+
+ex10: ex10.c
+	$(CC) $< $(OBJS) $(LIBS) $(OPT) -o $@ 
