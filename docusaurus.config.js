@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer/themes/vsDark');
+const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 const math = require('remark-math');
 const katex = require('rehype-katex');
 
@@ -24,7 +24,7 @@ const config = {
   noIndex: false,
   i18n: {
     defaultLocale: 'ja',
-    locales: ['ja'],
+    locales: ['ja', 'en'],
     localeConfigs: {
       ja: {
         label: '日本語',
@@ -87,7 +87,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       colorMode: {
-        defaultMode: 'light',
+        defaultMode: 'dark',
       },
       metadata: [
         {
@@ -103,29 +103,39 @@ const config = {
         },
         items: [
           {
-            to: 'blog/tags',
-            label: 'タグ別',
-            position: 'right'
-          },
-          {
             to: 'blog',
-            label: 'ブログ',
-            position: 'right'
-          },
-          {
-            to: 'blog/archive',
-            label: 'アーカイブ',
-            position: 'right'
+            label: 'Blog',
+            position: 'left'
           },
           {
             to: 'docs',
-            label: 'ドキュメント',
-            position: 'right'
+            label: 'Docs',
+            position: 'left'
+          },
+          {
+            to: 'blog/archive',
+            label: 'Archive',
+            position: 'left'
+          },
+          {
+            to: 'blog/tags',
+            label: 'Tags',
+            position: 'left'
           },
           {
             to: 'docs/sars2-yamaguchi/',
-            label: '山口県の新型コロナ情報',
-            position: 'right'
+            label: 'SARS-CoV-2 Info of Yamaguchi Pref area',
+            position: 'left'
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+            // dropdownItemsAfter: [
+            //   {
+            //     type: 'html',
+            //     value: '<hr style="margin: 0.3rem 0;">',
+            //   }
+            // ],
           },
           {
             href: 'https://github.com/himeyama/www.hikari-dev.com',

@@ -6,18 +6,59 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #FF678D;
-  --ifm-color-primary-dark: #C46B81;
+  --ifm-color-primary: #1da0f2;
+  /* --ifm-color-primary-dark: #C46B81;
   --ifm-color-primary-darker: #9D3C5E;
   --ifm-color-primary-darkest: #8C1A4A;
   --ifm-color-primary-light: #FF7AB3;
   --ifm-color-primary-lighter: #F5BEDB;
   --ifm-color-primary-lightest: #FFB8CA;
-  --ifm-code-font-size: 95%;
+  --ifm-code-font-size: 95%; */
+  --ifm-navbar-background-color: #f2f2f2;
+  --ifm-menu-color-background-active: #D1D5D9;
+  --ifm-menu-color-background-hover: #DCDFE3;
+  --ifm-menu-color-active: #060607;
+  --ifm-menu-color: #5e6772;
+}
+
+.menu {
+  background-color: #F2F3F5;
+}
+
+[data-theme='dark'] .menu {
+  background-color: #2F3136;
+}
+
+.main-wrapper {
+  background-color: #FFFFFF;
+}
+
+[data-theme='dark'] .main-wrapper {
+  background-color: #36393f;
+}
+
+/* [data-theme='dark'] .menu:hover{
+  --ifm-menu-color-background-hover: red;
+} */
+
+.footer.footer--dark {
+  --ifm-footer-background-color: #f2f2f2;
+  --ifm-footer-color: #5e6772;
+  --ifm-footer-link-color: #5e6772;
+}
+
+[data-theme='dark'] .footer.footer--dark {
+  --ifm-footer-background-color: #202225;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
+  --ifm-background-color: #36393F;
+  --ifm-navbar-background-color: #202225;
+  --ifm-menu-color-background-active: rgba(255, 255, 255, 0.0605);
+  --ifm-menu-color-active: #FFFFFF;
+  --ifm-menu-color: #96989D;
+  --ifm-menu-color-background-hover: rgba(255, 255, 255, 0.0605);
   /*--ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -36,4 +77,158 @@
 
 [data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+@keyframes svelte-1fnpv1w-rainbow-background-hue-rotate {
+  0% {
+    filter: none
+  }
+  50% {
+    filter: hue-rotate(180deg)
+  }
+  to {
+    filter: none
+  }
+}
+
+.top-area{
+  position: relative;
+  z-index: 1;
+}
+
+.top-title {
+  font-size: 48px;
+  margin-top: 24px;
+}
+
+/* メニュー */
+.menu__link.menu__link--active{
+  padding: 6px 12px 6px 0;
+}
+
+.menu__link.menu__link--active::before{
+  content: "";
+  background-color: rgba(0, 95, 184, 1);
+  width: 3px;
+  height: 16px;
+  border-radius: 8px;
+  margin-right: 9px;
+}
+
+[data-theme='dark'] .menu__link.menu__link--active::before{
+  background-color: rgba(96, 205, 255, 1);
+}
+
+/* ボタン */
+button {
+  background-color: rgba(255, 255, 277, .7);
+  border: solid 1px rgba(0, 0, 0, .06);
+  border-bottom: solid 1px rgba(0, 0, 0, .16);
+  border-radius: 4px;
+  padding: 0;
+  font-family: "Segoe UI Variable Text", "Seoge UI Variable Static Text", "Segoe UI", 'Yu Gothic UI', Arial, sans-serif;
+  padding: 4px 12px 6px 12px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, .8956);
+}
+
+[data-theme='dark'] button {
+  background-color: rgba(255, 255, 255, .0605);
+  border: solid 1px rgba(255, 255, 255, .09);
+  border-bottom: solid 1px rgba(255, 255, 255, .07);
+  color: #ffffff;
+}
+
+button.accent{
+  background-color: #005FB8;
+  color: #fff;
+  border: solid 1px rgba(255, 255, 255, .08);
+  border-bottom: solid 1px rgba(0, 0, 0, .4);
+}
+
+[data-theme='dark'] button.accent {
+  background-color: #60CDFF;
+  border: solid 1px rgba(255, 255, 255, .08);
+  border-bottom: solid 1px rgba(0, 0, 0, .14);
+  color: #000;
+}
+
+/* マウスオーバー */
+button:hover {
+  background-color: rgba(249, 249, 249, .5);
+}
+
+[data-theme='dark'] button:hover {
+  background-color: rgba(255, 255, 255, .0837);
+}
+
+button.accent:hover{
+  background-color: rgba(0, 95, 184, 0.9);
+}
+
+[data-theme='dark'] button.accent:hover {
+  background-color: rgba(96, 205, 255, 0.9);
+}
+
+/* アクティブ */
+button:active {
+  border-bottom: solid 1px rgba(0, 0, 0, .06);
+  color: rgba(0, 0, 0, .6063);
+}
+
+[data-theme='dark'] button:active {
+  border-bottom: solid 1px rgba(255, 255, 255, .07);
+  color: rgba(255, 255, 255, .786);
+}
+
+button.accent:active{
+  border-bottom: solid 1px rgba(255, 255, 255, .09);
+  color: rgba(255, 255, 255, .7);
+}
+
+[data-theme='dark']  button.accent:active{
+  border-bottom: solid 1px rgba(255, 255, 255, .08);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* 無効 */
+button:disabled {
+  border-bottom: solid 1px rgba(0, 0, 0, .06);
+  color: rgba(0, 0, 0, .3614);
+  pointer-events: none;
+  background-color: rgba(249, 249, 249, 0.3);
+}
+
+[data-theme='dark'] button:disabled {
+  border-bottom: solid 1px rgba(255, 255, 255, .07);
+  color: rgba(255, 255, 255, .3628);
+  background-color: rgba(255, 255, 255, 0.0419);
+}
+
+button.accent:disabled {
+  border: solid 1px transparent;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.2169);
+  pointer-events: none;
+}
+
+[data-theme='dark'] button.accent:disabled {
+  border: solid 1px transparent;
+  color: rgba(255, 255, 255, 0.5302);
+  background-color: rgba(255, 255, 255, 0.1581);
+  pointer-events: none;
+}
+
+button.with-link {
+  padding: 8px 0;
+}
+
+button.with-link a {
+  color: unset;
+  padding: 8px 12px;
+}
+
+button.with-link a:hover {
+  color: unset;
+  text-decoration: none;
 }

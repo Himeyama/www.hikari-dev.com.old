@@ -1,66 +1,53 @@
-import React from 'react';
-import clsx from 'clsx';
+import React, { useEffect } from 'react';
 import Layout from '@theme/Layout';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Translate, { translate } from '@docusaurus/Translate';
-import Link from '@docusaurus/Link';
-import styles from './styles.module.css';
+// import useBaseUrl from '@docusaurus/useBaseUrl';
+// import Button from 'react-bootstrap/Button';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
-function HeroBanner() {
-    const { siteConfig, tagline } = useDocusaurusContext();
+import Link from '@docusaurus/Link';
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+
+function Button(props) {
+
+  if (props.href) {
     return (
-        <div className={styles.hero}>
-            <div className={styles.heroInner}>
-                <h1 className={styles.heroProjectTagline}>
-                    <span
-                        className={styles.heroTitleTextHtml}
-                        // eslint-disable-next-line react/no-danger
-                        dangerouslySetInnerHTML={{
-                            __html: translate({
-                                id: 'homepage.hero.title',
-                                message:
-                                    '<b>ひかりぶ</b> へようこそ',
-                            }),
-                        }}
-                    />
-                </h1>
-                <h2 className={styles.heroSubTitleTextHtml}>
-                    <b>技術</b>ブログネタを中心に投稿しています
-                </h2>
-                <div className={styles.indexCtas}>
-                    <Link className="button button--primary" to="/blog">
-                        <Translate>記事を見る</Translate>
-                    </Link>
-                    <Link className="button button--info" to="/docs">
-                        <Translate>ドキュメント</Translate>
-                    </Link>
-                </div>
-            </div>
-        </div>
-    );
+      <button class={"with-link " + props.class} disabled={props.disabled}>
+        <Link href={props.href}>
+          {props.children}
+        </Link>
+      </button>
+    )
+  }
+  return (<button>{props.children}</button>)
 }
 
-export default function Home() {
-    return (
-        <Layout>
-            <main>
-                <HeroBanner />
-                <div className={styles.hero}>
-                    <div className={styles.heroInner}>
-                        <h2>リンク</h2>
-                        <p>
-                            <Link className="button button--info" to="/docs/center-r5/">
-                                <Translate>令和 5 年度大学入学共通テストカウントダウン</Translate>
-                            </Link>
-                        </p>
-                        <p>
-                            <Link className="button button--info" to="/docs/sars2-yamaguchi/">
-                                <Translate>山口県の新型コロナウイルス情報</Translate>
-                            </Link>
-                        </p>
-                    </div>
-                </div>
-            </main>
-        </Layout>
-    );
+export default () => {
+  return (
+    <Layout>
+      <div class="top-area-parent">
+        <div class="top-area">
+          <Container>
+            <Row>
+              <Col>
+                <p class="top-title">ひかりぶ</p>
+                <p>技術ネタを中心に投稿しています。</p>
+              </Col>
+            </Row>
+            <Row>
+              <Col><Button href="blog" class="">記事を見る</Button></Col>
+              <Col><Button href="docs">ドキュメント</Button></Col>
+              <Col>
+                <p><Button href="docs/center-r5">令和 5 年度大学入学共通テストカウントダウン</Button></p>
+                <p><Button href="docs/sars2-yamaguchi">山口県の新型コロナウイルス情報</Button></p>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      </div>
+    </Layout>
+  )
 }
