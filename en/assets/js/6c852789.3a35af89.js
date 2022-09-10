@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[5525],{725:e=>{e.exports=JSON.parse('{"label":"xrdp","permalink":"/en/blog/tags/xrdp","allTagsPath":"/en/blog/tags","count":1}')}}]);
