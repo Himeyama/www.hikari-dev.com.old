@@ -25,6 +25,7 @@
     "bootstrap": "^5.2.1",
     "chart.js": "^3.8.0",
     "clsx": "^1.1.1",
+    "docusaurus-plugin-sass": "^0.2.2",
     "hast-util-is-element": "^1.1.0",
     "mdx-mermaid": "^1.2.3",
     "mermaid": "^9.1.2",
@@ -34,7 +35,8 @@
     "react-chartjs-2": "^4.2.0",
     "react-dom": "^17.0.2",
     "rehype-katex": "^5.0.0",
-    "remark-math": "^3.0.1"
+    "remark-math": "^3.0.1",
+    "sass": "^1.54.9"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.1.0"

@@ -33,6 +33,7 @@ const config = {
     },
   },
   plugins: [
+    'docusaurus-plugin-sass',
     [
       '@docusaurus/plugin-client-redirects',
       {
@@ -69,7 +70,7 @@ const config = {
             'https://github.com/himeyama/www.hikari-dev.com',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.sass'),
         },
       },
     ],
@@ -91,8 +92,12 @@ const config = {
       },
       metadata: [
         {
-          name: 'ひかりぶ',
-          content: 'blog, technology, python, ruby, linux, student'
+          name: 'keywords',
+          content: 'blog,python,ruby,linux,student,ubuntu'
+        },
+        {
+          name: 'description',
+          content: "ひかりのホームページです。"
         }
       ],
       navbar: {
@@ -130,12 +135,6 @@ const config = {
           {
             type: 'localeDropdown',
             position: 'right',
-            // dropdownItemsAfter: [
-            //   {
-            //     type: 'html',
-            //     value: '<hr style="margin: 0.3rem 0;">',
-            //   }
-            // ],
           },
           {
             href: 'https://github.com/himeyama/www.hikari-dev.com',
@@ -163,8 +162,6 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} ひかりぶ. Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
       },
     }),
 };

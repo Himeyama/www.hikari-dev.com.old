@@ -4,26 +4,10 @@ import Layout from '@theme/Layout';
 // import Button from 'react-bootstrap/Button';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Link from '@docusaurus/Link';
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-
-function Button(props) {
-
-  if (props.href) {
-    return (
-      <button class={"with-link " + props.class} disabled={props.disabled}>
-        <Link href={props.href}>
-          {props.children}
-        </Link>
-      </button>
-    )
-  }
-  return (<button>{props.children}</button>)
-}
+import Button from '@site/src/components/Button';
 
 export default () => {
   return (
