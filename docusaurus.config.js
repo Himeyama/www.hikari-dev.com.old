@@ -1,8 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/vsDark');
+const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
+
 const math = require('remark-math');
 const katex = require('rehype-katex');
 
@@ -88,7 +89,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       colorMode: {
-        defaultMode: 'dark',
+        defaultMode: 'light',
       },
       metadata: [
         {
@@ -162,6 +163,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} ひかりぶ. Built with Docusaurus.`,
       },
       prism: {
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
       },
     }),
 };
