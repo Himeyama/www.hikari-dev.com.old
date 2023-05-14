@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2185],{8933:e=>{e.exports=JSON.parse('{"label":"LightGBM","permalink":"/en/blog/tags/light-gbm","allTagsPath":"/en/blog/tags","count":1}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[5539],{94351:e=>{e.exports=JSON.parse('{"label":"TexTra","permalink":"/en/blog/tags/tex-tra","allTagsPath":"/en/blog/tags","count":1}')}}]);

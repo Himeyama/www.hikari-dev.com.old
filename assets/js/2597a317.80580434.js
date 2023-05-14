@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[6193],{7494:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/linux/page/4","page":4,"postsPerPage":1,"totalPages":5,"totalCount":5,"previousPage":"/blog/tags/linux/page/3","nextPage":"/blog/tags/linux/page/5","blogDescription":"Hikari\'s blog.","blogTitle":"Hikalib"}')}}]);

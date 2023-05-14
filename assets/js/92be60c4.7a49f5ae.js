@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[6351],{10548:e=>{e.exports=JSON.parse('{"label":"scikit-learn","permalink":"/blog/tags/scikit-learn","allTagsPath":"/blog/tags","count":1}')}}]);

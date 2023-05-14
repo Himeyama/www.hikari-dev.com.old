@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[3472],{5289:e=>{e.exports=JSON.parse('{"label":"set_xticklabelss","permalink":"/en/blog/tags/set-xticklabelss","allTagsPath":"/en/blog/tags","count":1}')}}]);

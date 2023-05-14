@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9983],{4635:e=>{e.exports=JSON.parse('{"label":"set_xticks","permalink":"/en/blog/tags/set-xticks","allTagsPath":"/en/blog/tags","count":1}')}}]);

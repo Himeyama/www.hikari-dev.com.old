@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2127],{2742:e=>{e.exports=JSON.parse('{"label":"acorr","permalink":"/en/blog/tags/acorr","allTagsPath":"/en/blog/tags","count":1}')}}]);
