@@ -1,9 +1,8 @@
 ---
-title: 令和 5 年度 大学入学共通テストカウントダウン
-tags: [React, JavaScript]
+title: 令和 6 年度 大学入学共通テストカウントダウン
 ---
 
-```jsx showLineNumbers live
+```jsx showLineNumbers
 function Clock(props) {
   const [date, setDate] = useState("");
   
@@ -16,7 +15,7 @@ function Clock(props) {
   });
 
   function countdown() {
-    time_left = (new Date(2023, 0, 14, 9, 30, 0) - new Date()) / 1000;
+    time_left = (new Date(2024, 0, 13, 9, 30, 0) - new Date()) / 1000;
     ms = time_left - parseInt(time_left) // ミリ秒
     s = parseInt(time_left) % 60
     d = parseInt(time_left / 86400)
@@ -27,7 +26,7 @@ function Clock(props) {
 
   return (
     <div>
-      <p>令和 5 年度 大学入学共通テスト (令和 5 年 1 月 14 日 (土) 9:30) まであと、</p>
+      <p>令和 6 年度 大学入学共通テスト (令和 6 年 1 月 13 日 (土) 9:30) まであと、</p>
       <h2>残り {date}</h2>
     </div>
   );

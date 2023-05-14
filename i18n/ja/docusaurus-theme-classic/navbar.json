@@ -5,26 +5,26 @@
   },
   "item.label.Blog": {
     "message": "ブログ",
-    "description": "Navbar item with label ブログ"
+    "description": "Navbar item with label Blog"
   },
   "item.label.Docs": {
     "message": "ドキュメント",
-    "description": "Navbar item with label ドキュメント"
+    "description": "Navbar item with label Docs"
   },
   "item.label.Archive": {
     "message": "アーカイブ",
-    "description": "Navbar item with label アーカイブ"
+    "description": "Navbar item with label Archive"
   },
   "item.label.Tags": {
     "message": "タグ別",
-    "description": "Navbar item with label タグ別"
-  },
-  "item.label.SARS-CoV-2 Info of Yamaguchi Pref area": {
-    "message": "山口県の新型コロナ情報",
-    "description": "Navbar item with label 山口県の新型コロナ情報"
+    "description": "Navbar item with label Tags"
   },
   "item.label.GitHub": {
     "message": "GitHub",
     "description": "Navbar item with label GitHub"
+  },
+  "item.label.SARS-CoV-2 Info of Yamaguchi Pref area": {
+    "message": "SARS-CoV-2 Info of Yamaguchi Pref area",
+    "description": "Navbar item with label SARS-CoV-2 Info of Yamaguchi Pref area"
   }
 }

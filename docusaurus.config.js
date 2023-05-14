@@ -129,11 +129,6 @@ const config = {
             position: 'left'
           },
           {
-            to: 'docs/sars2-yamaguchi/',
-            label: 'SARS-CoV-2 Info of Yamaguchi Pref area',
-            position: 'left'
-          },
-          {
             type: 'localeDropdown',
             position: 'right',
           },
