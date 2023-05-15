@@ -2,7 +2,7 @@
 title: 令和 6 年度 大学入学共通テストカウントダウン
 ---
 
-```jsx showLineNumbers
+```jsx showLineNumbers live
 function Clock(props) {
   const [date, setDate] = useState("");
   
