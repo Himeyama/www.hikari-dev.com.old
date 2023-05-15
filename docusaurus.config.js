@@ -11,7 +11,7 @@ const redirects = require('./redirect.config.js');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  themes: ['@docusaurus/theme-live-codeblock'],
+  themes: [/*'@docusaurus/theme-live-codeblock'*/],
   title: 'ひかりぶ',
   tagline: 'Hikalib',
   url: 'https://www.hikari-dev.com',
@@ -33,15 +33,7 @@ const config = {
       },
     },
   },
-  plugins: [
-    'docusaurus-plugin-sass',
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects: redirects()
-      },
-    ],
-  ],
+  plugins: ['docusaurus-plugin-sass'],
   presets: [
     [
       '@docusaurus/preset-classic',
