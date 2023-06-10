@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9379],{6373:e=>{e.exports=JSON.parse('{"label":"Visual Studio","permalink":"/en/blog/tags/visual-studio","allTagsPath":"/en/blog/tags","count":1}')}}]);
